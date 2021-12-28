@@ -24,7 +24,7 @@ async def carbon_func(_, message):
     carbon.close()
 
 
-MEMEK = "https://telegra.ph/file/7e82b584cfe447ee154d7.jpg"
+MEMEK = "https://telegra.ph/file/22c92038a12ab5ec23f36.jpg"
 
 @pbot.on_message(filters.command("alive"))
 async def alive(_, message):
@@ -32,7 +32,7 @@ async def alive(_, message):
         photo=MEMEK,
         caption=f"""✨ **Hᴇʏ I Aᴍ Yᴜʀɪᴋᴏ Rᴏʙᴏᴛ** 
 
-**🧑‍💻 Powered By : [TeamDeeCode](https://t.me/TeamDeeCode)**
+**🧑‍💻 Powered By : [Alexia](https://t.me/Alexia_support)**
 **🐍 Python Version :** `{y()}`
 **📃 Library Version :** `{o}`
 **♻️ Telethon Version :** `{s}`
