@@ -90,7 +90,7 @@ PM_START_TEXT = """
 × *Uᴘᴛɪᴍᴇ:* `{}`
 × `{}` *Uꜱᴇʀ, Aᴄʀᴏꜱꜱ* `{}` *Cʜᴀᴛꜱ.*
 ────────────────────────
-✗ *Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Tᴇᴀᴍ DᴇCᴏᴅᴇ!*
+✗ *Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Alexia!*
 """
 
 buttons = [
@@ -99,7 +99,7 @@ buttons = [
             text="Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="Aꜱꜱɪꜱᴛᴀɴᴛ", callback_data="yurikorobot_asst"),
+        InlineKeyboardButton(text="Aꜱꜱɪꜱᴛᴀɴᴛ", callback_data="Alexia_asst"),
         InlineKeyboardButton(
             text="Iɴʟɪɴᴇ", switch_inline_query_current_chat=""
         ),
@@ -111,7 +111,7 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="Sᴜᴍᴍᴏɴ Mᴇ", url="http://t.me/AlexiaRobot?startgroup=true"),
+        InlineKeyboardButton(text="Sᴜᴍᴍᴏɴ Mᴇ", url="http://t.me/Alexia_x_robot?startgroup=true"),
     ],
 ]
 
@@ -248,7 +248,7 @@ def start(update: Update, context: CallbackContext):
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/Decodesupport")]]
+                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/Alexia_support")]]
             ),
         )
         
@@ -378,10 +378,10 @@ def help_button(update, context):
 
 def yurikorobot_about_callback(update, context):
     query = update.callback_query
-    if query.data == "yurikorobot_":
+    if query.data == "Alexiarobot_":
         query.message.edit_text(
-            text=""" *YURIKO* - `A bot to manage your groups with additional features!`
-            \n`Here the basic help regarding use of yurikorobot.`
+            text=""" *ALEXIA* - `A bot to manage your groups with additional features!`
+            \n`Here the basic help regarding use of Alexiaobot.`
             
             \n`Almost all modules usage defined in the help menu, checkout by sending` `/help`
             \n`Report error/bugs click the Button`""",
@@ -391,7 +391,7 @@ def yurikorobot_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Bᴜɢ'ꜱ", url="t.me/Decodesupport"
+                            text="Bᴜɢ'ꜱ", url="t.me/Alexia_support"
                         ),
                         InlineKeyboardButton(
                             text="Bᴏᴛ Lɪꜱᴛ", url="https://t.me/DeeCodeBots/32"
