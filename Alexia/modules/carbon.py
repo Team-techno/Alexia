@@ -30,7 +30,7 @@ MEMEK = "https://telegra.ph/file/22c92038a12ab5ec23f36.jpg"
 async def alive(_, message):
     await message.reply_photo(
         photo=MEMEK,
-        caption=f"""✨ **Hᴇʏ I Aᴍ Yᴜʀɪᴋᴏ Rᴏʙᴏᴛ** 
+        caption=f"""✨ **HEY I AM ALEXIA ROBOT** 
 
 **🧑‍💻 Powered By : [Alexia](https://t.me/Alexia_support)**
 **🐍 Python Version :** `{y()}`
