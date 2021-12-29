@@ -8,6 +8,7 @@
 
 ## ME FIND ON TELEGRAM [ALEXIA🤗](https://t.me/Alexia_x_robot)
 
+## SPECIAL CREADIT [YURIKO](https://t.me/yuriko_robot)
 
 
 
@@ -36,4 +37,3 @@
 
 
 
-## SPECIAL CREADIT- YURIKO
