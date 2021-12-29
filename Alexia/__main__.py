@@ -105,9 +105,9 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="Aʙᴏᴜᴛ", callback_data="yurikorobot_"),
+        InlineKeyboardButton(text="Aʙᴏᴜᴛ", callback_data="Alexiarobot_"),
         InlineKeyboardButton(
-            text="Bᴀꜱɪᴄ Hᴇʟᴘ", callback_data="yurikorobot_basichelp"
+            text="Bᴀꜱɪᴄ Hᴇʟᴘ", callback_data="Alexiarobot_basichelp"
         ),
     ],
     [
@@ -504,7 +504,7 @@ def yurikorobot_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="yurikorobot_basichelp")]]
+                [[InlineKeyboardButton(text="Back", callback_data="Alexiarobot_basichelp")]]
             ),
         )    
     elif query.data == "Alexiarobot_support":
