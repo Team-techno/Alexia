@@ -79,7 +79,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-Alexia_x_robot_IMG = "https://telegra.ph/file/8b6f8f2bb4ff3912634c7.jpg"
+Alexia_robot_IMG = "https://telegra.ph/file/8b6f8f2bb4ff3912634c7.jpg"
 
 PM_START_TEXT = """
 *👋 Hello {} !*
@@ -87,7 +87,7 @@ PM_START_TEXT = """
 ✗ *I'Aᴍ Aɴ Aɴɪᴍᴇ-Tʜᴇᴍᴇ Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ*
 ✗ *Aᴍ Vᴇʀʏ Fᴀꜱᴛ Aɴᴅ  Mᴏʀᴇ Eꜰꜰɪᴄɪᴇɴᴛ  I Pʀᴏᴠɪᴅᴇ Aᴡᴇꜱᴏᴍᴇ  Fᴇᴀᴛᴜʀᴇꜱ!*
 ────────────────────────
-× *Uᴘᴛɪᴍᴇ:* `{}`
+× *「𝕌𝕡𝕥𝕚𝕞𝕖」:* `{}`
 × `{}` *Uꜱᴇʀ, Aᴄʀᴏꜱꜱ* `{}` *Cʜᴀᴛꜱ.*
 ────────────────────────
 ✗ *Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Alexia!*
