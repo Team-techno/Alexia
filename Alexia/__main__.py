@@ -473,7 +473,7 @@ def Alexia_robot_about_callback(update, context):
                 [[InlineKeyboardButton(text="Back", callback_data="Alexia_robot_basichelp")]]
             ),
         )
-    elif query.data == "Alexia_x_robot_asst":
+    elif query.data == "Alexia_robot_asst":
         query.message.edit_text(
             text=f"*Hᴇʀᴇ Iꜱ Tʜᴇ Hᴇʟᴘ 「Aꜱꜱɪꜱᴛᴀɴᴛ」 Mᴏᴅᴜʟᴇ:*"
             
