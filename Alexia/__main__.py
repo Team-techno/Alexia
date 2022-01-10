@@ -91,7 +91,6 @@ PM_START_TEXT = """
 × `{}` *Uꜱᴇʀ, Aᴄʀᴏꜱꜱ* `{}` *Cʜᴀᴛꜱ.*
 ◆ ▬▬▬▬▬▬ ❴✪❵ ▬▬▬▬▬▬ ◆
 EMI_IMG = "https://telegra.ph/file/0465d9f16cb3f689c827a.jpg"
-
 ✗ *Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Alexia!*
 """
 
