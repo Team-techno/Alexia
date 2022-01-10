@@ -90,7 +90,6 @@ PM_START_TEXT = """
 × *「𝕌𝕡𝕥𝕚𝕞𝕖」:* `{}`
 × `{}` *Uꜱᴇʀ, Aᴄʀᴏꜱꜱ* `{}` *Cʜᴀᴛꜱ.*
 ◆ ▬▬▬▬▬▬ ❴✪❵ ▬▬▬▬▬▬ ◆
-EMI_IMG = "https://telegra.ph/file/0465d9f16cb3f689c827a.jpg"
 ✗ *Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Alexia!*
 """
 
