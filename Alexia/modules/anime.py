@@ -554,33 +554,32 @@ def kayo(update: Update, context: CallbackContext):
 __help__ = """
  ──「 Anime search 」──  
                          
-✗ /anime - `<anime> returns information about the anime.`
+𒊹︎ /anime - `<anime> returns information about the anime.`
 
-✗ /whatanime - `returns source of anime when replied to photo or gif.`
+𒊹︎ /whatanime - `returns source of anime when replied to photo or gif.`
                                                           
-✗ /character - `<character> returns information about the character.`
+𒊹︎ /character - `<character> returns information about the character.`
 
-✗ /manga - `<manga> returns information about the manga.`
+ /manga - `<manga> returns information about the manga.`
 
-✗ /user - `<user> returns information about a MyAnimeList user.`
+𒊹︎ /user - `<user> returns information about a MyAnimeList user.`
 
-✗ /upcoming - `returns a list of new anime in the upcoming seasons.`
+𒊹︎ /upcoming - `returns a list of new anime in the upcoming seasons.`
 
-✗ /airing - `<anime> returns anime airing info.`
+𒊹︎ /airing - `<anime> returns anime airing info.`
 
-✗ /whatanime - `<anime> reply to gif or photo.`
+𒊹︎ /whatanime - `<anime> reply to gif or photo.`
 
-✗ /kaizoku - `<anime> search an anime on animekaizoku.com`
+𒊹︎ /kaizoku - `<anime> search an anime on animekaizoku.com`
 
-✗ /kayo - `<anime> search an anime on animekayo.com`
+𒊹︎ /kayo - `<anime> search an anime on animekayo.com`
 
  「 Anime Quotes 」
 
-✗ /animequotes - `for anime quotes randomly as photos.`
+𒊹︎ /animequotes - `for anime quotes randomly as photos.`
 
-✗ /quote - `send quotes randomly as text`
+𒊹︎ /quote - `send quotes randomly as text`
 
-*✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Tᴇᴀᴍ DᴇCᴏᴅᴇ!*
  """
 
 ANIME_HANDLER = DisableAbleCommandHandler("anime", anime, run_async=True)
@@ -603,7 +602,7 @@ dispatcher.add_handler(KAIZOKU_SEARCH_HANDLER)
 dispatcher.add_handler(KAYO_SEARCH_HANDLER)
 dispatcher.add_handler(UPCOMING_HANDLER)
 
-__mod_name__ = "Aɴɪᴍᴇ"
+__mod_name__ = "Anime"
 __command_list__ = [
     "anime", "manga", "character", "user", "upcoming", "kaizoku", "airing",
     "kayo"
