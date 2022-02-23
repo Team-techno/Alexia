@@ -78,14 +78,14 @@ def kukiadd(update: Update, context: CallbackContext) -> str:
 def kuki(update: Update, context: CallbackContext):
     user = update.effective_user
     message = update.effective_message
-    msg = f"Choose an option👻"
+    msg = f"Choose an option✪"
     keyboard = InlineKeyboardMarkup([[
         InlineKeyboardButton(
             text="Enable🔥",
             callback_data="add_chat({})")],
        [
         InlineKeyboardButton(
-            text="Disable💔",
+            text="Disable✌",
             callback_data="rm_chat({})")]])
     message.reply_text(
         msg,
@@ -138,16 +138,15 @@ def list_all_chats(update: Update, context: CallbackContext):
     update.effective_message.reply_text(text, parse_mode="HTML")
 
 __help__ = """
-✗ `Chatbot utilizes the` *YURIKO* `api which allows Alexia to talk and provide a more interactive group chat experience.`
+𒊹︎ `Chatbot utilizes the` *YURIKO* `api which allows Alexia to talk and provide a more interactive group chat experience.`
 
 *Admins only Commands*:
  
-✗ /Chatbot - `Shows chatbot control panel`
+𒊹︎ /Chatbot - `Shows chatbot control panel`
   
-*✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Tᴇᴀᴍ DᴇCᴏᴅᴇ!*
 """
 
-__mod_name__ = "CʜᴀᴛBᴏᴛ"
+__mod_name__ = "Chatbot"
 
 
 CHATBOTK_HANDLER = CommandHandler("chatbot", kuki)
