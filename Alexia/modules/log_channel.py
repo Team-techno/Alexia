@@ -191,11 +191,11 @@ if is_module_loaded(FILENAME):
     __help__ = """
 ──「 Log channel 」──
 
-✗  /logchannel - `get log channel info`
+𒊹︎  /logchannel - `get log channel info`
 
-✗  /setlog - `set the log channel.`
+𒊹︎  /setlog - `set the log channel.`
 
-✗  /unsetlog - `unset the log channel.`
+𒊹︎  /unsetlog - `unset the log channel.`
 
 *Setting the log channel is done by*:
 
@@ -203,10 +203,9 @@ if is_module_loaded(FILENAME):
 ➩ `sending /setlog in the channel`
 ➩ `forwarding the /setlog to the group`
 
-*✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Tᴇᴀᴍ DᴇCᴏᴅᴇ!*
 """
 
-    __mod_name__ = "Lᴏɢ Cʜᴀɴɴᴇʟ​"
+    __mod_name__ = "Log channel​"
 
     LOG_HANDLER = CommandHandler("logchannel", logging, run_async=True)
     SET_LOG_HANDLER = CommandHandler("setlog", setlog, run_async=True)
