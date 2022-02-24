@@ -4,7 +4,7 @@ from Alexia import pbot as app
 from Alexia.utils.pluginhelper import fetch
 from Alexia.utils.inlinefuncs import *
 
-__MODULE__ = "ɪɴʟɪɴᴇ"
+__MODULE__ = "inline"
 __HELP__ = """See inline for help related to inline"""
 
 
