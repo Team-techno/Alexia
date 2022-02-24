@@ -105,7 +105,8 @@ buttons = [
         ),
     ],
     
-        InlineKeyboardButton(text="𝘼𝘽𝙊𝙄𝙐𝙏",  ="Alexia_robot_"),
+        InlineKeyboardButton(text="𝘼𝘽𝙊𝙄𝙐𝙏", callback_data="Alexia_robot_"),
+
         InlineKeyboardButton(
             text="𝘽𝘼𝙎𝙄𝘾 𝙃𝙀𝙇𝙋", callback_data="Alexia_robot_basichelp"
         ),
@@ -119,10 +120,10 @@ buttons = [
 HELP_STRINGS = """
 *✗ 𝙈𝘼𝙄𝙉 𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎 ✗*
 
-✗ /start - `Starts me! Your probably already used this.`
-✗ /help - `Click this I ll let you know about myself!`
-✗ /settings - `in PM: will send you your settings for all supported modules.`
-✗ *In A Group: Will Redirect You To Pm With All That Chats Settings.*)"""
+✦ /start - `Starts me! Your probably already used this.`
+✦ /help - `Click this I ll let you know about myself!`
+✦ /settings - `in PM: will send you your settings for all supported modules.`
+✦ *In A Group: Will Redirect You To Pm With All That Chats Settings.*)"""
 
 
 
@@ -248,7 +249,7 @@ def start(update: Update, context: CallbackContext):
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="✧Sᴜᴘᴘᴏʀᴛ✧", url="t.me/ALEXIA_SUPPORT")]]
+                [[InlineKeyboardButton(text="--»𝙎𝙪𝙥𝙥𝙤𝙧𝙩«--", url="t.me/ALEXIA_SUPPORT")]]
             ),
         )
         
@@ -391,10 +392,10 @@ def Alexia_robot_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Bᴜɢ'ꜱ", url="t.me/ALEXIA_SUPPORT"
+                            text="𝙎𝙐𝙋𝙋𝙊𝙍𝙏", url="t.me/ALEXIA_SUPPORT"
                         ),
                         InlineKeyboardButton(
-                            text="Bᴏᴛ Lɪꜱᴛ", url="https://t.me/ALEXIA_UPDATE"
+                            text="𝙂𝘽𝘼𝙉 𝙇𝙊𝙂𝙎", url="https://t.me/Alexia_logs"
                         ),
                     ],
                     [InlineKeyboardButton(text="Back", callback_data="Alexia_robot_back")],
@@ -429,12 +430,12 @@ def Alexia_robot_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Aᴅᴍɪɴ", callback_data="Alexia_robot_admin"),
-                    InlineKeyboardButton(text="Nᴏᴛᴇꜱ", callback_data="Alexia_robot_notes"),
+                    InlineKeyboardButton(text="𝘼𝙙𝙢𝙞𝙣", callback_data="Alexia_robot_admin"),
+                    InlineKeyboardButton(text="𝙉𝙤𝙩𝙚𝙨", callback_data="Alexia_robot_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", callback_data="Alexia_robot_support"),
-                    InlineKeyboardButton(text="Cʀᴇᴅɪᴛ", callback_data="Alexia_robot_credit"),
+                    InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩", callback_data="Alexia_robot_support"),
+                    InlineKeyboardButton(text="𝘾𝙧𝙚𝙖𝙙𝙞𝙩", callback_data="Alexia_robot_credit"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="Alexia_robot_back"),
@@ -447,7 +448,7 @@ def Alexia_robot_about_callback(update, context):
         query.message.edit_text(
             text=f"*Let's Make Your Group Bit Effective Now*"
             
-            f"\n✗ `Congragulations, AlexiaRobot now ready to manage your group.`"
+            f"\n✗ `Congragulations, Alexia_\Robot now ready to manage your group.`"
             f"\n\n*Admin Tools*"
             f"\n✗ `Basic Admin tools help you to protect and powerup your group.`"
             f"\n✗ `You can ban members, Kick members, Promote someone as admin through commands of bot.`"
@@ -480,7 +481,7 @@ def Alexia_robot_about_callback(update, context):
             f"\n*SETUP ASSISTANT*"
             f"\n\n✗ `1.) first, add me to your group.`"
             f"\n\n✗ `2.) then promote me as admin and give all permissions except anonymous admin.`"
-            f"\n\n✗ `3.) add` @AlexiaPlugin `to your group:`"
+            f"\n\n✗ `3.) add` @Alexiaa_\assis `to your group:`"
             f"\n\n✗ `4.) turn on the video chat first before start to play music.`"
             f"\n\n✗ *Lets Enjoy The Alexia Music And Join Support Group @ALEXIA_SUPPORT*"
             f"\n\n*✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: ALEXIA!*",
@@ -516,12 +517,12 @@ def Alexia_robot_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Lᴏɢ'ꜱ", url="t.me/ALEXIA_SUPPORT"),
-                    InlineKeyboardButton(text="Nᴇᴡꜱ", url="t.me/ALEXIA_UPDATE"),
+                    InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩", url="t.me/ALEXIA_SUPPORT"),
+                    InlineKeyboardButton(text="𝙐𝙥𝙙𝙖𝙩𝙚", url="t.me/ALEXIA_UPDATE"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/ALEXIA_SUPPORT"),
-                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/ALEXIA_UPDATE"),
+                    InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩", url="t.me/ALEXIA_SUPPORT"),
+                    InlineKeyboardButton(text="𝙐𝙥𝙙𝙖𝙩𝙚", url="https://t.me/ALEXIA_UPDATE"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="Alexia_robot_basichelp"),
@@ -539,12 +540,12 @@ def Alexia_robot_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="BʀᴀʏDᴇɴ", url="t.me/BrayDenXD"),
-                    InlineKeyboardButton(text="Bʟᴀᴢᴇ", url="t.me/Saur12p"),
+                    InlineKeyboardButton(text="𝘿𝙚𝙫", url="t.me/faraday7890"),
+                    InlineKeyboardButton(text="𝙊𝙬𝙣𝙚𝙧", url="t.me/Saur12p"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sʜᴜʙʜᴀɴꜱʜᴜ", url="t.me/Shubhanshutya"),
-                    InlineKeyboardButton(text="Alexia", url="https://t.me/ALEXIA_SUPPORT"),
+                    InlineKeyboardButton(text="𝘼𝙨𝙨𝙞𝙨𝙩𝙖𝙣𝙩", url="t.me/Alexiaa_assis"),
+                    InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩", url="https://t.me/ALEXIA_SUPPORT"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="Alexia_robot_basichelp"),
