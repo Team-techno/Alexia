@@ -96,28 +96,28 @@ PM_START_TEXT = """
 buttons = [
     [
         InlineKeyboardButton(
-            text="Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ", callback_data="help_back"),
+            text="𝙃𝙀𝙇𝙋&𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎", callback_data="help_back"),
     ],
     [
         InlineKeyboardButton(text="Aꜱꜱɪꜱᴛᴀɴᴛ", callback_data="Alexia_robot_asst"),
         InlineKeyboardButton(
-            text="Iɴʟɪɴᴇ", switch_inline_query_current_chat=""
+            text="𝙄𝙉𝙇𝙄𝙉𝙀", switch_inline_query_current_chat=""
         ),
     ],
-    [
-        InlineKeyboardButton(text="Aʙᴏᴜᴛ", callback_data="Alexia_robot_"),
+    
+        InlineKeyboardButton(text="𝘼𝘽𝙊𝙄𝙐𝙏",  ="Alexia_robot_"),
         InlineKeyboardButton(
-            text="Bᴀꜱɪᴄ Hᴇʟᴘ", callback_data="Alexia_robot_basichelp"
+            text="𝘽𝘼𝙎𝙄𝘾 𝙃𝙀𝙇𝙋", callback_data="Alexia_robot_basichelp"
         ),
     ],
     [
-        InlineKeyboardButton(text="▶Aᴅᴅ Mᴇ Yᴏᴜʀ Gʀᴏᴜᴘ◀", url="http://t.me/Alexia_Robot?startgroup=true"),
+        InlineKeyboardButton(text="𝘼𝘿𝘿 𝙈𝙀 𝙏𝙊 𝙔𝙊𝙐𝙍 𝙂𝙍𝙊𝙐𝙋", url="http://t.me/Alexia_Robot?startgroup=true"),
     ],
 ]
 
 
 HELP_STRINGS = """
-*✗ MAIN COMMANDS ✗*
+*✗ 𝙈𝘼𝙄𝙉 𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎 ✗*
 
 ✗ /start - `Starts me! Your probably already used this.`
 ✗ /help - `Click this I ll let you know about myself!`
