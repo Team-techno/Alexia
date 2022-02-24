@@ -540,7 +540,7 @@ def __chat_settings__(chat_id, user_id):
 __help__ = f"""
 *Admins only:*
 
-✗ /antispam - `<on/off/yes/no> Will toggle our antispam tech or return your current settings.`
+𒊹︎ /antispam - `<on/off/yes/no> Will toggle our antispam tech or return your current settings.`
 
 `Anti-Spam used by bot devs to ban spammers across all groups. This helps protect`
 `you and your groups by removing spam flooders as quickly as possible.`
@@ -551,8 +551,6 @@ __help__ = f"""
 `SpamWatch maintains a large constantly updated ban-list of spambots trolls bitcoin spammers and unsavoury characters`
 `Constantly help banning spammers off from your group automatically So you wont have to worry about spammers storming your group.`
 *Note:* `Users can appeal spamwatch bans at` @DeeCodeBots
-
-*✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Tᴇᴀᴍ DᴇCᴏᴅᴇ!*
 """
 
 GBAN_HANDLER = CommandHandler("gban", gban, run_async=True)
@@ -570,7 +568,7 @@ dispatcher.add_handler(UNGBAN_HANDLER)
 dispatcher.add_handler(GBAN_LIST)
 dispatcher.add_handler(GBAN_STATUS)
 
-__mod_name__ = "Aɴᴛɪ-Sᴘᴀᴍ"
+__mod_name__ = "Anti-spam"
 __handlers__ = [GBAN_HANDLER, UNGBAN_HANDLER, GBAN_LIST, GBAN_STATUS]
 
 if STRICT_GBAN:  # enforce GBANS if this is set
