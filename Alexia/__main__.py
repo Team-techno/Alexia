@@ -457,7 +457,7 @@ def yurikorobot_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="yurikorobot_basichelp")]]
+                [[InlineKeyboardButton(text="𝘽𝙖𝙘𝙠", callback_data="yurikorobot_basichelp")]]
             ),
         )
 
@@ -470,7 +470,7 @@ def yurikorobot_about_callback(update, context):
             f"\n\n`✗ You can also set buttons for notes and filters (refer help menu)`",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="yurikorobot_basichelp")]]
+                [[InlineKeyboardButton(text="𝘽𝙖𝙘𝙠", callback_data="yurikorobot_basichelp")]]
             ),
         )
     elif query.data == "yurikorobot_asst":
