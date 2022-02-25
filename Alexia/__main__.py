@@ -421,7 +421,7 @@ def Alexia_robot_about_callback(update, context):
             
             f"\n\n✗ `Firstly Add` {dispatcher.bot.first_name} `to your group by pressing` [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
             f"\n✗ `After adding promote me manually with full rights for faster experience.`\n"
-            f"\n✗ `Than send` `/admincache@Alexia_Robot` `in that chat to refresh admin list in My database.`\n"
+            f"\n✗ `Than send` `/admincache@Alexia_\Robot` `in that chat to refresh admin list in My database.`\n"
             f"\n\n*All done now use below given button's to know about use!*\n"
             f"",
             parse_mode=ParseMode.MARKDOWN,
@@ -433,8 +433,8 @@ def Alexia_robot_about_callback(update, context):
                     InlineKeyboardButton(text="𝙉𝙤𝙩𝙚𝙨", callback_data="Alexia_robot_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩", callback_data="Alexia_robot_support"),
-                    InlineKeyboardButton(text="𝘾𝙧𝙚𝙖𝙙𝙞𝙩", callback_data="Alexia_robot_credit"),
+                    InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩", callback_data="alexia_robot_support"),
+                    InlineKeyboardButton(text="𝘾𝙧𝙚𝙖𝙙𝙞𝙩", callback_data="alexia_robot_credit"),
                  ],
                  [
                     InlineKeyboardButton(text="Back", callback_data="Alexia_robot_back"),
