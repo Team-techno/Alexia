@@ -104,10 +104,9 @@ buttons = [
             text="𝙄𝙉𝙇𝙄𝙉𝙀", switch_inline_query_current_chat=""
         ),
     ],
-    
+    [       
         InlineKeyboardButton(text="𝘼𝘽𝙊𝙄𝙐𝙏", callback_data="Alexia_robot_"),
-
-        InlineKeyboardButton(
+             InlineKeyboardButton(
             text="𝘽𝘼𝙎𝙄𝘾 𝙃𝙀𝙇𝙋", callback_data="Alexia_robot_basichelp"
         ),
     ],
