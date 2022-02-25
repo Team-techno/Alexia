@@ -105,7 +105,7 @@ buttons = [
         ),
     ],
     [       
-        InlineKeyboardButton(text="𝘼𝘽𝙊𝙄𝙐𝙏", callback_data="Alexia_robot_"),
+        InlineKeyboardButton(text="𝘼𝘽𝙊𝙐𝙏", callback_data="Alexia_robot_"),
              InlineKeyboardButton(
             text="𝘽𝘼𝙎𝙄𝘾 𝙃𝙀𝙇𝙋", callback_data="Alexia_robot_basichelp"
         ),
