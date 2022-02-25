@@ -584,10 +584,9 @@ __help__ = """
 
  *Note:* `Note names are case-insensitive, and they are automatically converted to lowercase before getting saved.`
 
-✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Tᴇᴀᴍ DᴇCᴏᴅᴇ!
 """
 
-__mod_name__ = "Nᴏᴛᴇꜱ"
+__mod_name__ = "Notes"
 
 GET_HANDLER = CommandHandler("get", cmd_get, run_async=True)
 HASH_GET_HANDLER = MessageHandler(Filters.regex(r"^#[^\s]+"), hash_get, run_async=True)
