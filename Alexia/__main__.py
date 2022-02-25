@@ -79,7 +79,7 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-Alexia_robot_IMG = "https://telegra.ph/file/8b6f8f2bb4ff3912634c7.jpg"
+Alexia_robot_IMG = "https://telegra.ph/file/65ce3fe6c013e26e3d463.jpg"
 
 PM_START_TEXT = """
 *👋 Hello {} !*
@@ -127,7 +127,7 @@ HELP_STRINGS = """
 
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- @PiroXPower's 💕"""
+ @Saur12p 💕"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -248,7 +248,7 @@ def start(update: Update, context: CallbackContext):
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/Decodesupport")]]
+                [[InlineKeyboardButton(text="--»𝙎𝙪𝙥𝙥𝙤𝙧𝙩«--", url="t.me/ALEXIA_SUPPORT")]]
             ),
         )
         
@@ -391,10 +391,10 @@ def yurikorobot_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Bᴜɢ'ꜱ", url="t.me/Decodesupport"
+                            text="𝙎𝙐𝙋𝙋𝙊𝙍𝙏", url="t.me/ALEXIA_SUPPORT"
                         ),
                         InlineKeyboardButton(
-                            text="Bᴏᴛ Lɪꜱᴛ", url="https://t.me/DeeCodeBots/32"
+                            text="𝙂𝘽𝘼𝙉 𝙇𝙊𝙂𝙎", url="https://t.me/Alexia_logs"
                         ),
                     ],
                     [InlineKeyboardButton(text="Back", callback_data="yurikorobot_back")],
