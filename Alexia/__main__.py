@@ -99,15 +99,15 @@ buttons = [
             text="𝙃𝙀𝙇𝙋&𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="Aꜱꜱɪꜱᴛᴀɴᴛ", callback_data="Alexia_robot_asst"),
+        InlineKeyboardButton(text="Aꜱꜱɪꜱᴛᴀɴᴛ", callback_data="alexia_asst"),
         InlineKeyboardButton(
             text="𝙄𝙉𝙇𝙄𝙉𝙀", switch_inline_query_current_chat=""
         ),
     ],
     [       
-        InlineKeyboardButton(text="𝘼𝘽𝙊𝙐𝙏", callback_data="Alexia_robot_"),
+        InlineKeyboardButton(text="𝘼𝘽𝙊𝙐𝙏", callback_data="alexia_"),
              InlineKeyboardButton(
-            text="𝘽𝘼𝙎𝙄𝘾 𝙃𝙀𝙇𝙋", callback_data="Alexia_robot_basichelp"
+            text="𝘽𝘼𝙎𝙄𝘾 𝙃𝙀𝙇𝙋", callback_data_="alexia_basichelp"
         ),
     ],
     [
@@ -376,9 +376,9 @@ def help_button(update, context):
 
 
 
-def Alexia_robot_about_callback(update, context):
+def alexia_about_callback(update, context):
     query = update.callback_query
-    if query.data == "Alexia_robot_":
+    if query.data == "alexia_":
         query.message.edit_text(
             text=""" *ALEXIA* - `A bot to manage your groups with additional features!`
             \n`Here the basic help regarding use of Alexia_robot.`
@@ -397,11 +397,11 @@ def Alexia_robot_about_callback(update, context):
                             text="𝙂𝘽𝘼𝙉 𝙇𝙊𝙂𝙎", url="https://t.me/Alexia_logs"
                         ),
                     ],
-                    [InlineKeyboardButton(text="Back", callback_data="Alexia_robot_back")],
+                    [InlineKeyboardButton(text="Back", callback_data="alexia_back")],
                 ]
             ),
         )
-    elif query.data == "Alexia_robot_back":
+    elif query.data == "alexia_back":
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
@@ -415,7 +415,7 @@ def Alexia_robot_about_callback(update, context):
                 timeout=60,
                 disable_web_page_preview=False,
         )
-    elif query.data == "Alexia_robot_basichelp":
+    elif query.data == "alexia_basichelp":
         query.message.edit_text(
             text=f"*Here's basic Help regarding* *How to use Me?*"
             
@@ -429,21 +429,21 @@ def Alexia_robot_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="𝘼𝙙𝙢𝙞𝙣", callback_data="Alexia_robot_admin"),
-                    InlineKeyboardButton(text="𝙉𝙤𝙩𝙚𝙨", callback_data="Alexia_robot_notes"),
+                    InlineKeyboardButton(text="𝘼𝙙𝙢𝙞𝙣", callback_data="alexia_admin"),
+                    InlineKeyboardButton(text="𝙉𝙤𝙩𝙚𝙨", callback_data="alexia_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩", callback_data="alexia_robot_support"),
-                    InlineKeyboardButton(text="𝘾𝙧𝙚𝙖𝙙𝙞𝙩", callback_data="alexia_robot_credit"),
+                    InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩", callback_data="alexia_support"),
+                    InlineKeyboardButton(text="𝘾𝙧𝙚𝙖𝙙𝙞𝙩", callback_data="alexia_credit"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="Alexia_robot_back"),
+                    InlineKeyboardButton(text="Back", callback_data="alexia_back"),
                  
                  ]
                 ]
             ),
         )
-    elif query.data == "Alexia_robot_admin":
+    elif query.data == "alexia_admin":
         query.message.edit_text(
             text=f"*Let's Make Your Group Bit Effective Now*"
             
@@ -457,11 +457,11 @@ def Alexia_robot_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="Alexia_robot_basichelp")]]
+                [[InlineKeyboardButton(text="Back", callback_data="alexia_basichelp")]]
             ),
         )
 
-    elif query.data == "Alexia_robot_notes":
+    elif query.data == "alexia_notes":
         query.message.edit_text(
             text=f"<b> Setting Up Notes</b>"
             
@@ -470,10 +470,10 @@ def Alexia_robot_about_callback(update, context):
             f"\n\n`✗ You can also set buttons for notes and filters (refer help menu)`",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="Alexia_robot_basichelp")]]
+                [[InlineKeyboardButton(text="Back", callback_data="alexia_basichelp")]]
             ),
         )
-    elif query.data == "Alexia_robot_asst":
+    elif query.data == "alexia_asst":
         query.message.edit_text(
             text=f"*Hᴇʀᴇ Iꜱ Tʜᴇ Hᴇʟᴘ 「Aꜱꜱɪꜱᴛᴀɴᴛ」 Mᴏᴅᴜʟᴇ:*"
             
@@ -487,10 +487,10 @@ def Alexia_robot_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="Alexia_robot_back")]]
+                [[InlineKeyboardButton(text="Back", callback_data="alexia_back")]]
             ),
         )
-    elif query.data.data == "Alexia_robot_admin":
+    elif query.data.data == "alexia_admin":
         query.message.edit_text(
             text=f"*Let's Make Your Group Bit Effective Now*"
             
@@ -504,10 +504,10 @@ def Alexia_robot_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="Alexia_robot_basichelp")]]
+                [[InlineKeyboardButton(text="Back", callback_data="alexia_basichelp")]]
             ),
         )    
-    elif query.data == "Alexia_robot_support":
+    elif query.data == "alexia_support":
         query.message.edit_text(
             text="* ALEXIA Support Chats*"
             
@@ -524,13 +524,13 @@ def Alexia_robot_about_callback(update, context):
                     InlineKeyboardButton(text="𝙐𝙥𝙙𝙖𝙩𝙚", url="https://t.me/ALEXIA_UPDATE"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="Alexia_robot_basichelp"),
+                    InlineKeyboardButton(text="Back", callback_data="alexia_basichelp"),
                  
                  ]
                 ]
             ),
         )
-    elif query.data == "Alexia_robot_credit":
+    elif query.data == "alexia_credit":
         query.message.edit_text(
             text=f"<b> CREDIT FOR ALEXIA DEV'S</b>\n"
             
@@ -547,7 +547,7 @@ def Alexia_robot_about_callback(update, context):
                     InlineKeyboardButton(text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩", url="https://t.me/ALEXIA_SUPPORT"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="Alexia_robot_basichelp"),
+                    InlineKeyboardButton(text="Back", callback_data="alexia_basichelp"),
                  
                  ]
                 ]
@@ -560,7 +560,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..😻 I'm *Alexia_robot*
+            text=""" Hi..😻 I'm *Alexia*
                  \nHere is the [🔥Source Code🔥](https://github.com/Sumans11) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -879,7 +879,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(Alexia_robot_about_callback, pattern=r"Alexia_robot_")
+    about_callback_handler = CallbackQueryHandler(alexia_about_callback, pattern=r"alexia_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
