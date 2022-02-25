@@ -96,33 +96,33 @@ PM_START_TEXT = """
 buttons = [
     [
         InlineKeyboardButton(
-            text="Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅꜱ", callback_data="help_back"),
+            text="𝙃𝙀𝙇𝙋&𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="Aꜱꜱɪꜱᴛᴀɴᴛ", callback_data="yurikorobot_asst"),
+        InlineKeyboardButton(text="𝘼𝙎𝙎𝙄𝙎𝙏𝘼𝙉𝙏", callback_data="yurikorobot_asst"),
         InlineKeyboardButton(
-            text="Iɴʟɪɴᴇ", switch_inline_query_current_chat=""
+            text="𝙄𝙉𝙇𝙄𝙉𝙀", switch_inline_query_current_chat=""
         ),
     ],
     [
-        InlineKeyboardButton(text="Aʙᴏᴜᴛ", callback_data="yurikorobot_"),
+        InlineKeyboardButton(text="𝘼𝘽𝙊𝙐𝙏", callback_data="yurikorobot_"),
         InlineKeyboardButton(
-            text="Bᴀꜱɪᴄ Hᴇʟᴘ", callback_data="yurikorobot_basichelp"
+            text="𝘽𝘼𝙎𝙄𝘾 𝙃𝙀𝙇𝙋", callback_data="yurikorobot_basichelp"
         ),
     ],
     [
-        InlineKeyboardButton(text="Sᴜᴍᴍᴏɴ Mᴇ", url="http://t.me/Alexia_Robot?startgroup=true"),
+        InlineKeyboardButton(text="𝘼𝘿𝘿 𝙈𝙀 𝙏𝙊 𝙔𝙊𝙐𝙍 𝙂𝙍𝙊𝙐𝙋", url="http://t.me/Alexia_Robot?startgroup=true"),
     ],
 ]
 
 
 HELP_STRINGS = """
-*✗ MAIN COMMANDS ✗*
+*❂ 𝙈𝘼𝙄𝙉 𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎 ❂*
 
-✗ /start - `Starts me! Your probably already used this.`
-✗ /help - `Click this I ll let you know about myself!`
-✗ /settings - `in PM: will send you your settings for all supported modules.`
-✗ *In A Group: Will Redirect You To Pm With All That Chats Settings.*)"""
+❂ /start - `Starts me! Your probably already used this.`
+❂ /help - `Click this I ll let you know about myself!`
+❂ /settings - `in PM: will send you your settings for all supported modules.`
+❂ *In A Group: Will Redirect You To Pm With All That Chats Settings.*)"""
 
 
 
@@ -397,7 +397,7 @@ def yurikorobot_about_callback(update, context):
                             text="𝙂𝘽𝘼𝙉 𝙇𝙊𝙂𝙎", url="https://t.me/Alexia_logs"
                         ),
                     ],
-                    [InlineKeyboardButton(text="Back", callback_data="yurikorobot_back")],
+                    [InlineKeyboardButton(text="𝘽𝙖𝙘𝙠", callback_data="yurikorobot_back")],
                 ]
             ),
         )
@@ -429,15 +429,15 @@ def yurikorobot_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Aᴅᴍɪɴ", callback_data="yurikorobot_admin"),
-                    InlineKeyboardButton(text="Nᴏᴛᴇꜱ", callback_data="yurikorobot_notes"),
+                    InlineKeyboardButton(text="𝘼𝘿𝙈𝙄𝙉", callback_data="yurikorobot_admin"),
+                    InlineKeyboardButton(text="𝙉𝙊𝙏𝙀𝙎", callback_data="yurikorobot_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", callback_data="yurikorobot_support"),
-                    InlineKeyboardButton(text="Cʀᴇᴅɪᴛ", callback_data="yurikorobot_credit"),
+                    InlineKeyboardButton(text="𝙎𝙐𝙋𝙋𝙊𝙍𝙏", callback_data="yurikorobot_support"),
+                    InlineKeyboardButton(text="𝘾𝙍𝙀𝘼𝘿𝙄𝙏", callback_data="yurikorobot_credit"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="yurikorobot_back"),
+                    InlineKeyboardButton(text="𝘽𝙖𝙘𝙠", callback_data="yurikorobot_back"),
                  
                  ]
                 ]
@@ -483,7 +483,7 @@ def yurikorobot_about_callback(update, context):
             f"\n\n✗ `3.) add` @Alexiaa_assis `to your group:`"
             f"\n\n✗ `4.) turn on the video chat first before start to play music.`"
             f"\n\n✗ *Lets Enjoy The Alexia Music And Join Support Group @DeCodeSupport*"
-            f"\n\n*✗ Pᴏᴡᴇʀᴇᴅ 💕 Bʏ: Alexia!*",
+            f"\n\n*✗ 𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 𝘼𝙇𝙀𝙓𝙄𝘼 𝙍𝙊𝘽𝙊𝙏!*",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -504,7 +504,7 @@ def yurikorobot_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="yurikorobot_basichelp")]]
+                [[InlineKeyboardButton(text="𝘽𝙖𝙘𝙠", callback_data="yurikorobot_basichelp")]]
             ),
         )    
     elif query.data == "yurikorobot_support":
@@ -516,15 +516,15 @@ def yurikorobot_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Lᴏɢ'ꜱ", url="t.me/Alexia_Logs"),
-                    InlineKeyboardButton(text="Nᴇᴡꜱ", url="t.me/Alexia_support"),
+                    InlineKeyboardButton(text="𝙂𝘽𝘼𝙉 𝙇𝙊𝙂𝙎", url="t.me/Alexia_Logs"),
+                    InlineKeyboardButton(text="𝙉𝙀𝙒𝙎", url="t.me/Alexia_support"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/ALEXIA_SUPPORT"),
-                    InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇꜱ", url="https://t.me/ALEXIA_UPDATE"),
+                    InlineKeyboardButton(text="𝙎𝙐𝙋𝙋𝙊𝙍𝙏", url="t.me/ALEXIA_SUPPORT"),
+                    InlineKeyboardButton(text="𝙐𝙋𝘿𝘼𝙏𝙀𝙎", url="https://t.me/ALEXIA_UPDATE"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="yurikorobot_basichelp"),
+                    InlineKeyboardButton(text="𝘽𝙖𝙘𝙠", callback_data="yurikorobot_basichelp"),
                  
                  ]
                 ]
@@ -539,15 +539,15 @@ def yurikorobot_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="BʀᴀʏDᴇɴ", url="t.me/BrayDenXD"),
-                    InlineKeyboardButton(text="Bʟᴀᴢᴇ", url="t.me/piroXpower"),
+                    InlineKeyboardButton(text="𝙂𝙄𝙏𝙃𝙐𝘽", url="t.me/sumans11"),
+                    InlineKeyboardButton(text="𝙈𝙐𝙎𝙄𝘾 𝘼𝙎𝙎𝙄𝙎𝙏𝘼𝙉𝙏", url="t.me/Alexiaa_assis"),
                  ],
                  [
-                    InlineKeyboardButton(text="Sʜᴜʙʜᴀɴꜱʜᴜ", url="t.me/Shubhanshutya"),
-                    InlineKeyboardButton(text="Dᴇ Cᴏᴅᴇ", url="https://t.me/TeamDeeCode"),
+                    InlineKeyboardButton(text="𝙎𝘼𝙐𝙍𝘼𝘽𝙃", url="t.me/Saur12p"),
+                    InlineKeyboardButton(text="𝘼𝙇𝙀𝙓𝙄𝘼", url="https://t.me/ALEXIA_SUPPORT"),
                  ],
                  [
-                    InlineKeyboardButton(text="Back", callback_data="yurikorobot_basichelp"),
+                    InlineKeyboardButton(text="𝘽𝙖𝙘𝙠", callback_data="yurikorobot_basichelp"),
                  
                  ]
                 ]
@@ -561,7 +561,7 @@ def Source_about_callback(update, context):
     if query.data == "source_":
         query.message.edit_text(
             text=""" Hi..😻 I'm *Alexia_robot*
-                 \nHere is the [🔥Source Code🔥](https://github.com/TeamDeeCode) .""",
+                 \nHere is the [🔥Source Code🔥](https://github.com/Sumans11) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -596,7 +596,7 @@ def get_help(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Help",
+                                text="𝙃𝙚𝙡𝙥",
                                 url="t.me/{}?start=ghelp_{}".format(
                                     context.bot.username, module
                                 ),
@@ -612,13 +612,13 @@ def get_help(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Hᴇʟᴘ ❔",
+                            text="𝙃𝙚𝙡𝙥 ✯︎",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
                     ],
                     [
                         InlineKeyboardButton(
-                            text="Sᴜᴘᴘᴏʀᴛ Cʜᴀᴛ 📢 ",
+                            text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩 𝘾𝙝𝙖𝙩 💕 ",
                             url="https://t.me/{}".format(SUPPORT_CHAT),
                         )
                     ],
