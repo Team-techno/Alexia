@@ -42,7 +42,7 @@ LOGO_LINKS            = ["https://telegra.ph/file/15ad263ca90d8a9968b85.jpg",
                          "https://telegra.ph/file/34803e6ec805eef77d4a8.jpg",
                          "https://telegra.ph/file/347411b0c8a46641799c5.jpg",
                          "https://telegra.ph/file/1d88da62f2cac96b2ef55.jpg",
-                         "https://telegra.ph/file/c0da",
+                         "https://telegra.ph/file/c0da5080a3ff7643ddeb4.jpg",
                          "https://telegra.ph/file/79fad473ffe888ed771b2.jpg",
                          "https://telegra.ph/file/eafd526d9dcc164d7269f.jpg",
                          "https://telegra.ph/file/98b50e8424dd2be9fc127.jpg",
@@ -254,11 +254,13 @@ async def lego(event):
  if event.sender_id == OWNER_ID:
      pass
  else:
-
-  if not quew:
-     await event.reply('Please Gimmie A Text For The Logo.')
-     return
- pesan = await event.reply('𝗟𝗢𝗚𝗢 𝗜𝗡 𝗣𝗥𝗢𝗖𝗘𝗦𝗦 𝗣𝗟𝗘𝗔𝗦𝗘 𝗪𝗔𝗜𝗧 𝗠𝗔𝗦𝗧𝗘𝗥.')
+     
+    if not quew:
+       await event.reply('Provide Some Text To Draw!')
+       return
+    else:
+       pass
+ pesan = await event.reply('`Preparing logo`')
  try:
     text = event.pattern_match.group(1)
     randc = random.choice(LOGO_LINKS)
@@ -268,7 +270,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./Alexia/Modules/logo/*")
+    fnt = glob.glob("./Alexia/utils/logo/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 120)
     w, h = draw.textsize(text, font=font)
@@ -277,10 +279,11 @@ async def lego(event):
     draw.text(((image_widthz-w)/2, (image_heightz-h)/2), text, font=font, fill=(255, 255, 255))
     x = (image_widthz-w)/2
     y = ((image_heightz-h)/2+6)
-    draw.text((x, y), text, font=font, fill="white", stroke_width=1, stroke_fill="black")
+    draw.text((x, y), text, font=font, fill="white", stroke_width=5, stroke_fill="black")
     fname = "Alexia.png"
     img.save(fname, "png")
-    await telethn.send_file(event.chat_id, file=fname, caption = f"Made by [Alexia](https://t.me/Alexia_robot)")         
+    await pesan.edit('`Done`')
+    await telethn.send_file(event.chat_id, file=fname, caption = f"Made by [ALEXIA🌸](t.me/ALEXIA_SUPPORT)")
     await pesan.delete()
     if os.path.exists(fname):
             os.remove(fname)
