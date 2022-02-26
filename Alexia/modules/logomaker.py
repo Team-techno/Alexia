@@ -270,7 +270,7 @@ async def lego(event):
     pointsize = 500
     fillcolor = "black"
     shadowcolor = "blue"
-    fnt = glob.glob("./Alexia/utils/logo/*")
+    fnt = glob.glob("./Alexia/resources/logo/*")
     randf = random.choice(fnt)
     font = ImageFont.truetype(randf, 120)
     w, h = draw.textsize(text, font=font)
