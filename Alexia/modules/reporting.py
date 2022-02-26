@@ -1,142 +1,116 @@
 import html
-
-from Alexia import LOGGER, DRAGONS, TIGERS, WOLVES, dispatcher
-from Alexia.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from Alexia.modules.log_channel import loggable
-from Alexia.modules.sql import reporting_sql as sql
-from telegram import Chat, InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
+from typing import List, Optional
+from telegram import Message, Chat, Update, Bot, User, ParseMode, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.error import BadRequest, Unauthorized
-from telegram.ext import (
-    CallbackContext,
-    CallbackQueryHandler,
-    CommandHandler,
-    Filters,
-    MessageHandler,
-)
+from telegram.ext import CommandHandler, RegexHandler, run_async, Filters, CallbackQueryHandler
 from telegram.utils.helpers import mention_html
 
-REPORT_GROUP = 12
-REPORT_IMMUNE_USERS = DRAGONS + TIGERS + WOLVES
+from Alexia import dispatcher, LOGGER
+from Alexia.modules.helper_funcs.chat_status import user_not_admin, user_admin
+from Alexia.modules.log_channel import loggable
+from Alexia.modules.sql import reporting_sql as sql
+from Alexia.modules.tr_engine.strings import tld
+
+REPORT_GROUP = 5
 
 
+@run_async
 @user_admin
-def report_setting(update: Update, context: CallbackContext):
-    bot, args = context.bot, context.args
-    chat = update.effective_chat
-    msg = update.effective_message
+def report_setting(bot: Bot, update: Update, args: List[str]):
+    chat = update.effective_chat  # type: Optional[Chat]
+    msg = update.effective_message  # type: Optional[Message]
 
     if chat.type == chat.PRIVATE:
         if len(args) >= 1:
             if args[0] in ("yes", "on"):
                 sql.set_user_setting(chat.id, True)
-                msg.reply_text(
-                    "Turned on reporting! You'll be notified whenever anyone reports something.",
-                )
+                msg.reply_text(tld(chat.id, "reports_pm_on"))
 
             elif args[0] in ("no", "off"):
                 sql.set_user_setting(chat.id, False)
-                msg.reply_text("Turned off reporting! You wont get any reports.")
+                msg.reply_text(tld(chat.id, "reports_pm_off"))
         else:
-            msg.reply_text(
-                f"Your current report preference is: `{sql.user_should_report(chat.id)}`",
-                parse_mode=ParseMode.MARKDOWN,
-            )
+            msg.reply_text(tld(chat.id, "reports_pm_pref").format(
+                sql.user_should_report(chat.id)),
+                           parse_mode=ParseMode.MARKDOWN)
 
     else:
         if len(args) >= 1:
             if args[0] in ("yes", "on"):
                 sql.set_chat_setting(chat.id, True)
-                msg.reply_text(
-                    f"Turned on reporting in {chat.title}!\n\nAdmins who have turned on reports will be notified when `/report` "
-                    "or @admin is called.",
-                )
+                msg.reply_text(tld(chat.id, "reports_chat_on"))
 
             elif args[0] in ("no", "off"):
                 sql.set_chat_setting(chat.id, False)
-                msg.reply_text(
-                    f"Turned off reporting in {chat.title}!\n\nNo admins will be notified on `/report` or @admin.",
-                )
+                msg.reply_text(tld(chat.id, "reports_chat_off"))
         else:
-            msg.reply_text(
-                f"Current report setting is: `{sql.chat_should_report(chat.id)}`.\n\nTo change this setting, try this command again, with one of the following args: yes/no/on/off",
-                parse_mode=ParseMode.MARKDOWN,
-            )
+            msg.reply_text(tld(chat.id, "reports_chat_pref").format(
+                sql.chat_should_report(chat.id)),
+                           parse_mode=ParseMode.MARKDOWN)
 
 
+@run_async
 @user_not_admin
 @loggable
-def report(update: Update, context: CallbackContext) -> str:
-    bot = context.bot
-    args = context.args
-    message = update.effective_message
-    chat = update.effective_chat
-    user = update.effective_user
+def report(bot: Bot, update: Update) -> str:
+    message = update.effective_message  # type: Optional[Message]
+    chat = update.effective_chat  # type: Optional[Chat]
+    user = update.effective_user  # type: Optional[User]
 
     if chat and message.reply_to_message and sql.chat_should_report(chat.id):
-        reported_user = message.reply_to_message.from_user
+        reported_user = message.reply_to_message.from_user  # type: Optional[User]
         chat_name = chat.title or chat.first or chat.username
         admin_list = chat.get_administrators()
-        message = update.effective_message
 
-        if not args:
-            message.reply_text("Add a reason for reporting first.")
-            return ""
-
-        if user.id == reported_user.id:
-            message.reply_text("Uh yeah, Sure sure...maso much?")
-            return ""
-
-        if user.id == bot.id:
-            message.reply_text("Nice try.")
-            return ""
-
-        if reported_user.id in REPORT_IMMUNE_USERS:
-            message.reply_text("Uh? You reporting a Kingdom Asosiation?")
-            return ""
+        if int(reported_user.id) == int(user.id):
+            return
 
         if chat.username and chat.type == Chat.SUPERGROUP:
+            msg = "<b>{}:</b>" \
+                  "\n<b>Reported user:</b> {} (<code>{}</code>)" \
+                  "\n<b>Reported by:</b> {} (<code>{}</code>)".format(html.escape(chat.title),
+                                                                      mention_html(
+                                                                          reported_user.id,
+                                                                          reported_user.first_name),
+                                                                      reported_user.id,
+                                                                      mention_html(user.id,
+                                                                                   user.first_name),
+                                                                      user.id)
+            link = "\n<b>Link:</b> " \
+                   "<a href=\"http://telegram.me/{}/{}\">click here</a>".format(chat.username, message.message_id)
 
-            reported = f"{mention_html(user.id, user.first_name)} reported {mention_html(reported_user.id, reported_user.first_name)} to the admins!"
-
-            msg = (
-                f"<b>⚠️ Report: </b>{html.escape(chat.title)}\n"
-                f"<b> • Report by:</b> {mention_html(user.id, user.first_name)}(<code>{user.id}</code>)\n"
-                f"<b> • Reported user:</b> {mention_html(reported_user.id, reported_user.first_name)} (<code>{reported_user.id}</code>)\n"
-            )
-            link = f'<b> • Reported message:</b> <a href="https://t.me/{chat.username}/{message.reply_to_message.message_id}">click here</a>'
-            should_forward = False
-            keyboard = [
-                [
-                    InlineKeyboardButton(
-                        "➡ Message",
-                        url=f"https://t.me/{chat.username}/{message.reply_to_message.message_id}",
-                    ),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "⚠ Kick",
-                        callback_data=f"report_{chat.id}=kick={reported_user.id}={reported_user.first_name}",
-                    ),
-                    InlineKeyboardButton(
-                        "⛔️ Ban",
-                        callback_data=f"report_{chat.id}=banned={reported_user.id}={reported_user.first_name}",
-                    ),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "❎ Delete Message",
-                        callback_data=f"report_{chat.id}=delete={reported_user.id}={message.reply_to_message.message_id}",
-                    ),
-                ],
-            ]
+            should_forward = True
+            keyboard = [[
+                InlineKeyboardButton(
+                    u"➡ Message",
+                    url="https://t.me/{}/{}".format(
+                        chat.username,
+                        str(message.reply_to_message.message_id)))
+            ],
+                        [
+                            InlineKeyboardButton(
+                                u"⚠ Kick",
+                                callback_data="report_{}=kick={}={}".format(
+                                    chat.id, reported_user.id,
+                                    reported_user.first_name)),
+                            InlineKeyboardButton(
+                                u"⛔️ Ban",
+                                callback_data="report_{}=banned={}={}".format(
+                                    chat.id, reported_user.id,
+                                    reported_user.first_name))
+                        ],
+                        [
+                            InlineKeyboardButton(
+                                u"❎ Delete Message",
+                                callback_data="report_{}=delete={}={}".format(
+                                    chat.id, reported_user.id,
+                                    message.reply_to_message.message_id))
+                        ]]
             reply_markup = InlineKeyboardMarkup(keyboard)
-        else:
-            reported = (
-                f"{mention_html(user.id, user.first_name)} reported "
-                f"{mention_html(reported_user.id, reported_user.first_name)} to the admins!"
-            )
 
-            msg = f'{mention_html(user.id, user.first_name)} is calling for admins in "{html.escape(chat_name)}"!'
+        else:
+            msg = "{} is calling for admins in \"{}\"!".format(
+                mention_html(user.id, user.first_name), html.escape(chat_name))
             link = ""
             should_forward = True
 
@@ -147,59 +121,55 @@ def report(update: Update, context: CallbackContext) -> str:
             if sql.user_should_report(admin.user.id):
                 try:
                     if not chat.type == Chat.SUPERGROUP:
-                        bot.send_message(
-                            admin.user.id,
-                            msg + link,
-                            parse_mode=ParseMode.HTML,
-                        )
+                        bot.send_message(admin.user.id,
+                                         msg + link,
+                                         parse_mode=ParseMode.HTML)
 
                         if should_forward:
                             message.reply_to_message.forward(admin.user.id)
 
-                            if (
-                                len(message.text.split()) > 1
-                            ):  # If user is giving a reason, send his message too
+                            if len(
+                                    message.text.split()
+                            ) > 1:  # If user is giving a reason, send his message too
                                 message.forward(admin.user.id)
+
                     if not chat.username:
-                        bot.send_message(
-                            admin.user.id,
-                            msg + link,
-                            parse_mode=ParseMode.HTML,
-                        )
+                        bot.send_message(admin.user.id,
+                                         msg + link,
+                                         parse_mode=ParseMode.HTML)
 
                         if should_forward:
                             message.reply_to_message.forward(admin.user.id)
 
-                            if (
-                                len(message.text.split()) > 1
-                            ):  # If user is giving a reason, send his message too
+                            if len(
+                                    message.text.split()
+                            ) > 1:  # If user is giving a reason, send his message too
                                 message.forward(admin.user.id)
 
                     if chat.username and chat.type == Chat.SUPERGROUP:
-                        bot.send_message(
-                            admin.user.id,
-                            msg + link,
-                            parse_mode=ParseMode.HTML,
-                            reply_markup=reply_markup,
-                        )
+                        bot.send_message(admin.user.id,
+                                         msg + link,
+                                         parse_mode=ParseMode.HTML,
+                                         reply_markup=reply_markup)
 
                         if should_forward:
                             message.reply_to_message.forward(admin.user.id)
 
-                            if (
-                                len(message.text.split()) > 1
-                            ):  # If user is giving a reason, send his message too
+                            if len(
+                                    message.text.split()
+                            ) > 1:  # If user is giving a reason, send his message too
                                 message.forward(admin.user.id)
 
                 except Unauthorized:
                     pass
                 except BadRequest as excp:  # TODO: cleanup exceptions
-                    LOGGER.exception("Exception while reporting user")
+                    LOGGER.exception(
+                        f"Exception while reporting user : {excp}")
 
-        message.reply_to_message.reply_text(
-            f"{mention_html(user.id, user.first_name)} reported the message to the admins.",
-            parse_mode=ParseMode.HTML,
-        )
+        message.reply_to_message.reply_text(tld(
+            chat.id,
+            "reports_success").format(mention_html(user.id, user.first_name)),
+                                            parse_mode=ParseMode.HTML)
         return msg
 
     return ""
@@ -209,93 +179,51 @@ def __migrate__(old_chat_id, new_chat_id):
     sql.migrate_chat(old_chat_id, new_chat_id)
 
 
-def __chat_settings__(chat_id, _):
-    return f"This chat is setup to send user reports to admins, via /report and @admin: `{sql.chat_should_report(chat_id)}`"
-
-
-def __user_settings__(user_id):
-    if sql.user_should_report(user_id) is True:
-        text = "You will receive reports from chats you're admin."
-    else:
-        text = "You will *not* receive reports from chats you're admin."
-    return text
-
-
-def buttons(update: Update, context: CallbackContext):
-    bot = context.bot
+def buttons(bot: Bot, update):
     query = update.callback_query
     splitter = query.data.replace("report_", "").split("=")
     if splitter[1] == "kick":
         try:
             bot.kickChatMember(splitter[0], splitter[2])
             bot.unbanChatMember(splitter[0], splitter[2])
-            query.aswer("✅ Succesfully kicked")
+            query.answer("✅ Succesfully kicked")
             return ""
         except Exception as err:
-            query.answer("🛑 Failed to Kick")
-            bot.sendMessage(
-                text=f"Error: {err}",
-                chat_id=query.message.chat_id,
-                parse_mode=ParseMode.HTML,
-            )
+            query.answer("❎ Failed to kick")
+            bot.sendMessage(text="Error: {}".format(err),
+                            chat_id=query.message.chat_id,
+                            parse_mode=ParseMode.HTML)
     elif splitter[1] == "banned":
         try:
             bot.kickChatMember(splitter[0], splitter[2])
             query.answer("✅  Succesfully Banned")
             return ""
         except Exception as err:
-            bot.sendMessage(
-                text=f"Error: {err}",
-                chat_id=query.message.chat_id,
-                parse_mode=ParseMode.HTML,
-            )
-            query.answer("🛑 Failed to Ban")
+            bot.sendMessage(text="Error: {}".format(err),
+                            chat_id=query.message.chat_id,
+                            parse_mode=ParseMode.HTML)
+            query.answer("❎ Failed to ban")
     elif splitter[1] == "delete":
         try:
             bot.deleteMessage(splitter[0], splitter[3])
             query.answer("✅ Message Deleted")
             return ""
         except Exception as err:
-            bot.sendMessage(
-                text=f"Error: {err}",
-                chat_id=query.message.chat_id,
-                parse_mode=ParseMode.HTML,
-            )
-            query.answer("🛑 Failed to delete message!")
+            bot.sendMessage(text="Error: {}".format(err),
+                            chat_id=query.message.chat_id,
+                            parse_mode=ParseMode.HTML)
+            query.answer("❎ Failed to delete message!")
 
 
-__help__ = """
-𒊹︎ /report - `<reason> reply to a message to report it to admins.`
+__help__ = True
 
-𒊹︎ @admin - `reply to a message to report it to admins.`
+REPORT_HANDLER = CommandHandler("report", report, filters=Filters.group)
+SETTING_HANDLER = CommandHandler("reports", report_setting, pass_args=True)
+ADMIN_REPORT_HANDLER = RegexHandler("(?i)@admin(s)?", report)
 
-*NOTE:* `Neither of these will get triggered if used by admins.`
+report_button_user_handler = CallbackQueryHandler(buttons, pattern=r"report_")
+dispatcher.add_handler(report_button_user_handler)
 
-*Admins only:*
-𒊹︎ /reports - `<on/off> change report setting or view current status.`
-`If done in pm toggles your status.`
-`If in group toggles that groups status.`
-"""
-
-SETTING_HANDLER = CommandHandler("reports", report_setting, run_async=True)
-REPORT_HANDLER = CommandHandler(
-    "report", report, filters=Filters.chat_type.groups, run_async=True
-)
-ADMIN_REPORT_HANDLER = MessageHandler(
-    Filters.regex(r"(?i)@admin(s)?"), report, run_async=True
-)
-REPORT_BUTTON_USER_HANDLER = CallbackQueryHandler(
-    buttons, pattern=r"report_", run_async=True
-)
-
-dispatcher.add_handler(REPORT_BUTTON_USER_HANDLER)
-dispatcher.add_handler(SETTING_HANDLER)
 dispatcher.add_handler(REPORT_HANDLER, REPORT_GROUP)
 dispatcher.add_handler(ADMIN_REPORT_HANDLER, REPORT_GROUP)
-
-__mod_name__ = "Report"
-__handlers__ = [
-    (REPORT_HANDLER, REPORT_GROUP),
-    (ADMIN_REPORT_HANDLER, REPORT_GROUP),
-    (SETTING_HANDLER),
-]
+dispatcher.add_handler(SETTING_HANDLER) 
