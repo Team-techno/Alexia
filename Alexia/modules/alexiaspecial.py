@@ -6,7 +6,7 @@ from telethon import *
 from telethon.tl.types import *
 
 from Alexia import *
-from Alexia import ubot
+from Alexia import ubot2
 from Alexia.events import register
 
 EMOJI_PATTERN = re.compile(
@@ -36,7 +36,7 @@ async def stickerizer(event):
 
     newtext = event.pattern_match.group(1)
     animus = [20, 32, 33, 40, 41, 42, 58]
-    sticcers = await ubot.inline_query(
+    sticcers = await ubot2.inline_query(
         "stickerizerbot", f"#{random.choice(animus)}{(deEmojify(newtext))}"
     )
     null = await sticcers[0].download_media(TEMP_DOWNLOAD_DIRECTORY)
