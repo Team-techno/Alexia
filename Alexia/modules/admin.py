@@ -120,10 +120,10 @@ def set_desc(update: Update, context: CallbackContext):
     if len(tesc) >= 2:
         desc = tesc[1]
     else:
-        return msg.reply_text("Setting empty description won't do anything!🤔")
+        return msg.reply_text("Setting empty description won't do anything!")
     try:
         if len(desc) > 255:
-            return msg.reply_text("Description must needs to be under 255 characters!🙂")
+            return msg.reply_text("Description must needs to be under 255 characters!")
         context.bot.set_chat_description(chat.id, desc)
         msg.reply_text(f"Successfully updated chat description in {chat.title}!")
     except BadRequest as excp:
@@ -143,7 +143,7 @@ def setchat_title(update: Update, context: CallbackContext):
 
     title = " ".join(args)
     if not title:
-        msg.reply_text("Kuch text do taki ma set new title in your chat!😴")
+        msg.reply_text("Give me some text then I am set chat tittle")
         return
 
     try:
@@ -600,7 +600,7 @@ def pin(update: Update, context: CallbackContext) -> str:
                     [
                         [
                             InlineKeyboardButton(
-                                "👉 Go to message", url=f"{message_link}")
+                                "🥰 Go to message", url=f"{message_link}")
                         ]
                     ]
                 ), 
@@ -713,7 +713,7 @@ def pinned(update: Update, context: CallbackContext) -> str:
             parse_mode=ParseMode.HTML,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="👉 Go to message", url=f"https://t.me/{link_chat_id}/{pinned_id}")]]
+                [[InlineKeyboardButton(text="🥰 Go to message", url=f"https://t.me/{link_chat_id}/{pinned_id}")]]
             ),
         )
 
