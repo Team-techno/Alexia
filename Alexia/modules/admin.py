@@ -18,7 +18,7 @@ from Alexia.modules.helper_funcs.chat_status import (
 )
 from Alexia.modules.helper_funcs.extraction import extract_user, extract_user_and_text
 from Alexia.modules.log_channel import loggable
-from Alexia.utils.admin_rights import (
+from Alexia.utils.adminperms import (
     user_can_changeinfo,
     user_can_pin,
     user_can_promote,
