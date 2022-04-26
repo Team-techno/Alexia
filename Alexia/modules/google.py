@@ -277,26 +277,3 @@ async def apk(e):
 
 
 __mod_name__ = "Search"
-
-__help__ = """
-𒊹︎ /google - `<query> Perform a google search`
-
-𒊹︎ /image - `<query> Search Google for images and returns them\nFor greater no. of results specify lim, For eg:` `/img hello lim=10`
-
-𒊹︎ /app - `<appname> Searches for an app in Play Store and returns its details.`
-
-𒊹︎ /reverse - `Does a reverse image search of the media which it was replied to.`
-
-𒊹︎ /gps `<location> Get gps location.`
-
-𒊹︎ /github - `<username> Get information about a GitHub user.`
-
-𒊹︎ /country - `<country name> Gathering info about given country`
-
-𒊹︎ /imdb - `<Movie name> Get full info about a movie with imdb.com`
-
-𒊹︎ Alexia - `<query> Alexia answers the query`
-
-💡 Ex: `Alexia where is Japan?`
-
-"""
