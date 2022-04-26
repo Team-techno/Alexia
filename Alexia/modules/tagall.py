@@ -109,7 +109,4 @@ async def cancel_spam(event):
     return await event.respond("__Stopped Mention.__")
 
 __mod_name__ = "Mention"
-__help__ = """
- |• @all: Mention All Members Of Group Upto 20k
- |• /tagall: Tag everyone in a chat
-"""
+
