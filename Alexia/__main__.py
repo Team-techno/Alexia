@@ -90,34 +90,34 @@ PM_START_TEXT = """
 × *𝐔𝐏𝐓𝐈𝐌𝐄:* `{}`
 × `{}` *Uꜱᴇʀ, Aᴄʀᴏꜱꜱ* `{}` *Cʜᴀᴛꜱ.*
 ────────────────────────
-❂ *𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐀𝐋𝐄𝐗𝐈𝐀 𝐑𝐎𝐁𝐎𝐓!*
+❂ 𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 [Techno](https://t.me/Technobotsupport)
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="𝙃𝙀𝙇𝙋&𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎", callback_data="help_back"),
+            text="Help", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="𝘼𝙎𝙎𝙄𝙎𝙏𝘼𝙉𝙏", callback_data="yurikorobot_asst"),
+        InlineKeyboardButton(text="Assistant", callback_data="yurikorobot_asst"),
         InlineKeyboardButton(
-            text="𝙄𝙉𝙇𝙄𝙉𝙀", switch_inline_query_current_chat=""
+            text="Inline", switch_inline_query_current_chat=""
         ),
     ],
     [
         InlineKeyboardButton(text="𝘼𝘽𝙊𝙐𝙏", callback_data="yurikorobot_"),
         InlineKeyboardButton(
-            text="𝘽𝘼𝙎𝙄𝘾 𝙃𝙀𝙇𝙋", callback_data="yurikorobot_basichelp"
+            text="Basic help", callback_data="yurikorobot_basichelp"
         ),
     ],
     [
-        InlineKeyboardButton(text="𝘼𝘿𝘿 𝙈𝙀 𝙏𝙊 𝙔𝙊𝙐𝙍 𝙂𝙍𝙊𝙐𝙋", url="http://t.me/Alexia_Robot?startgroup=true"),
+        InlineKeyboardButton(text="Add me to your group", url="http://t.me/Techno_ro_bot?startgroup=true"),
     ],
 ]
 
 
 HELP_STRINGS = """
-*❂ 𝙈𝘼𝙄𝙉 𝘾𝙊𝙈𝙈𝘼𝙉𝘿𝙎 ❂*
+*❂ Main command ❂*
 
 ❂ /start - `Starts me! Your probably already used this.`
 ❂ /help - `Click this I ll let you know about myself!`
@@ -248,7 +248,7 @@ def start(update: Update, context: CallbackContext):
             ),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="--»𝙎𝙪𝙥𝙥𝙤𝙧𝙩«--", url="t.me/ALEXIA_SUPPORT")]]
+                [[InlineKeyboardButton(text="--»𝙎𝙪𝙥𝙥𝙤𝙧𝙩«--", url="t.me/Technobotsupport")]]
             ),
         )
         
@@ -380,7 +380,7 @@ def yurikorobot_about_callback(update, context):
     query = update.callback_query
     if query.data == "yurikorobot_":
         query.message.edit_text(
-            text=""" *Alexia* - `A bot to manage your groups with additional features!`
+            text=""" *Techno* - `A bot to manage your groups with additional features!`
             \n`Here the basic help regarding use of yurikorobot.`
             
             \n`Almost all modules usage defined in the help menu, checkout by sending` `/help`
@@ -391,10 +391,10 @@ def yurikorobot_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="𝙎𝙐𝙋𝙋𝙊𝙍𝙏", url="t.me/ALEXIA_SUPPORT"
+                            text="𝙎𝙐𝙋𝙋𝙊𝙍𝙏", url="t.me/Technobotsupport"
                         ),
                         InlineKeyboardButton(
-                            text="𝙂𝘽𝘼𝙉 𝙇𝙊𝙂𝙎", url="https://t.me/Alexia_logs"
+                            text="𝙂𝘽𝘼𝙉 𝙇𝙊𝙂𝙎", url="https://t.me/Technobotsupport"
                         ),
                     ],
                     [InlineKeyboardButton(text="𝘽𝙖𝙘𝙠", callback_data="yurikorobot_back")],
@@ -421,7 +421,7 @@ def yurikorobot_about_callback(update, context):
             
             f"\n\n✗ `Firstly Add` {dispatcher.bot.first_name} `to your group by pressing` [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
             f"\n✗ `After adding promote me manually with full rights for faster experience.`\n"
-            f"\n✗ `Than send` `/admincache@Alexia_Robot` `in that chat to refresh admin list in My database.`\n"
+            f"\n✗ `Than send` `/admincache@Techno_Ro_bot` `in that chat to refresh admin list in My database.`\n"
             f"\n\n*All done now use below given button's to know about use!*\n"
             f"",
             parse_mode=ParseMode.MARKDOWN,
@@ -447,7 +447,7 @@ def yurikorobot_about_callback(update, context):
         query.message.edit_text(
             text=f"*Let's Make Your Group Bit Effective Now*"
             
-            f"\n✗ `Congragulations, AexiaRobot now ready to manage your group.`"
+            f"\n✗ `Congragulations, *Techno Robot* now ready to manage your group.`"
             f"\n\n*Admin Tools*"
             f"\n✗ `Basic Admin tools help you to protect and powerup your group.`"
             f"\n✗ `You can ban members, Kick members, Promote someone as admin through commands of bot.`"
@@ -480,10 +480,10 @@ def yurikorobot_about_callback(update, context):
             f"\n*SETUP ASSISTANT*"
             f"\n\n✗ `1.) first, add me to your group.`"
             f"\n\n✗ `2.) then promote me as admin and give all permissions except anonymous admin.`"
-            f"\n\n✗ `3.) add` @Alexiaa_assis `to your group:`"
+            f"\n\n✗ `3.) add` @Technomusicassistant `to your group:`"
             f"\n\n✗ `4.) turn on the video chat first before start to play music.`"
-            f"\n\n✗ *Lets Enjoy The Alexia Music And Join Support Group @DeCodeSupport*"
-            f"\n\n*✗ 𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 𝘼𝙇𝙀𝙓𝙄𝘼 𝙍𝙊𝘽𝙊𝙏!*",
+            f"\n\n✗ *Lets Enjoy The Techno Music And Join Support Group @DeCodeSupport*"
+            f"\n\n*✗ 𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 [Techno](https://t.me/Technobotsupport)",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -494,7 +494,7 @@ def yurikorobot_about_callback(update, context):
         query.message.edit_text(
             text=f"*Let's Make Your Group Bit Effective Now*"
             
-            f"\n✗ `Congragulations, Alexia_Robot now ready to manage your group.`"
+            f"\n✗ `Congragulations, Techno_Ro_bot now ready to manage your group.`"
             f"\n\n*Admin Tools*"
             f"\n✗ `Basic Admin tools help you to protect and powerup your group.`"
             f"\n✗ `You can ban members, Kick members, Promote someone as admin through commands of bot.`"
@@ -509,19 +509,19 @@ def yurikorobot_about_callback(update, context):
         )    
     elif query.data == "yurikorobot_support":
         query.message.edit_text(
-            text="* ALEXIA Support Chats*"
+            text="* Techno Robot Support Chats*"
             
             "\n\n✗ `Join Support Group/Channel`",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="𝙂𝘽𝘼𝙉 𝙇𝙊𝙂𝙎", url="t.me/Alexia_Logs"),
-                    InlineKeyboardButton(text="𝙉𝙀𝙒𝙎", url="t.me/Alexia_support"),
+                    InlineKeyboardButton(text="𝙂𝘽𝘼𝙉 𝙇𝙊𝙂𝙎", url="t.me/Technobotsupport"),
+                    InlineKeyboardButton(text="𝙉𝙀𝙒𝙎", url="t.me/Technobotsupport"),
                  ],
                  [
-                    InlineKeyboardButton(text="𝙎𝙐𝙋𝙋𝙊𝙍𝙏", url="t.me/ALEXIA_SUPPORT"),
-                    InlineKeyboardButton(text="𝙐𝙋𝘿𝘼𝙏𝙀𝙎", url="https://t.me/ALEXIA_UPDATE"),
+                    InlineKeyboardButton(text="𝙎𝙐𝙋𝙋𝙊𝙍𝙏", url="t.me/Technobotsupport"),
+                    InlineKeyboardButton(text="𝙐𝙋𝘿𝘼𝙏𝙀𝙎", url="https://t.me/Technobotsupport"),
                  ],
                  [
                     InlineKeyboardButton(text="𝘽𝙖𝙘𝙠", callback_data="yurikorobot_basichelp"),
@@ -532,19 +532,19 @@ def yurikorobot_about_callback(update, context):
         )
     elif query.data == "yurikorobot_credit":
         query.message.edit_text(
-            text=f"<b> CREDIT FOR ALEXIA DEV'S</b>\n"
+            text=f"<b> CREDIT FOR TECHNO DEV'S</b>\n"
             
-            f"\n`✗ Here Some Developers Helping in Making The Alexia Bot`",
+            f"\n`✗ Here Some Developers Helping in Making The Techno Robot`",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="𝙂𝙄𝙏𝙃𝙐𝘽", url="t.me/sumans11"),
-                    InlineKeyboardButton(text="𝙈𝙐𝙎𝙄𝘾 𝘼𝙎𝙎𝙄𝙎𝙏𝘼𝙉𝙏", url="t.me/Alexiaa_assis"),
+                    InlineKeyboardButton(text="𝙂𝙄𝙏𝙃𝙐𝘽", url="t.me/Kunal12459"),
+                    InlineKeyboardButton(text="𝙈𝙐𝙎𝙄𝘾 𝘼𝙎𝙎𝙄𝙎𝙏𝘼𝙉𝙏", url="t.me/Technomusicassistant"),
                  ],
                  [
                     InlineKeyboardButton(text="𝙎𝘼𝙐𝙍𝘼𝘽𝙃", url="t.me/Saur12p"),
-                    InlineKeyboardButton(text="𝘼𝙇𝙀𝙓𝙄𝘼", url="https://t.me/ALEXIA_SUPPORT"),
+                    InlineKeyboardButton(text="techno", url="https://t.me/technobotsupport"),
                  ],
                  [
                     InlineKeyboardButton(text="𝘽𝙖𝙘𝙠", callback_data="yurikorobot_basichelp"),
@@ -560,7 +560,7 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..😻 I'm *Alexia_robot*
+            text=""" Hi..😻 I'm *Techno_robot*
                  \nHere is the [🔥Source Code🔥](https://github.com/Sumans11) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -618,7 +618,7 @@ def get_help(update: Update, context: CallbackContext):
                     ],
                     [
                         InlineKeyboardButton(
-                            text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩 𝘾𝙝𝙖𝙩 💕 ",
+                            text="𝙎𝙪𝙥𝙥𝙤𝙧𝙩 𝘾𝙝𝙖𝙩 🤓 ",
                             url="https://t.me/{}".format(SUPPORT_CHAT),
                         )
                     ],
