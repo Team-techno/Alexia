@@ -10,7 +10,7 @@
       ],
     
    "logo":    "https://telegra.ph/file/1495fab0586fe05160204.jpg",  
-   "repository": "https://github.com/Sumans11/Alexia",
+   "repository": "https://github.com/Team-techno/Alexia",
    "addons": [
           {
          "options": {
@@ -69,7 +69,7 @@
       },
       "BOT_USERNAME": {
          "description": "username of your bot without the @",
-         "value": ""
+         "value": "Techno_ro_bot"
       },
 
       "BOT_ID": {
@@ -79,12 +79,12 @@
 
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": ""
+         "value": "Technomusicassistant"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
          "required": true,
-         "value": ""
+         "value": "Technobotsupport"
       },
       "MONGO_DB_URI": {
          "description": "Required for database connections.",
