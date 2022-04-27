@@ -9,7 +9,7 @@ from Alexia.utils.errors import capture_err
 from Alexia.utils.functions import make_carbon
 
 
-@pbot.on_message(filters.command("carbon"))
+@pbot.on_message(filters.command("abcd"))
 @capture_err
 async def carbon_func(_, message):
     if not message.reply_to_message:
@@ -46,7 +46,7 @@ async def alive(_, message):
                     InlineKeyboardButton(
                         "Repo", url="https://GitHub.com/Sumans11/Alexia"), 
                     InlineKeyboardButton(
-                        "Support", url="https://t.me/Alexia_support")
+                        "Support", url="https://t.me/Technobotsupport")
                 ]
             ]
         )
