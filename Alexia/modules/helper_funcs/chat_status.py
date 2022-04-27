@@ -319,7 +319,9 @@ def can_promote(func):
         message_chat_title = update.effective_message.chat.title
 
         if update_chat_title == message_chat_title:
-            cant_promote = "Ma kise ko nahi kara skta promote/demote yaha per!\nMake sure Na ma admin hu🥺 na he add Admin permission."
+            cant_promote = "I can't promote/demote people here!
+
+Make sure I'm admin and can appoint new admins.."
         else:
             cant_promote = (
                 f"I can't promote/demote people in <b>{update_chat_title}</b>!\n"
@@ -342,7 +344,7 @@ def can_restrict(func):
         message_chat_title = update.effective_message.chat.title
 
         if update_chat_title == message_chat_title:
-            cant_restrict = "Na Ma kise ko restrict kar skta here!\nMake sure Admin na hu na iseliya."
+            cant_restrict = "i am not admin!\nREEE."
         else:
             cant_restrict = f"I can't restrict people in <b>{update_chat_title}</b>!\nMake sure I'm admin there and can restrict users."
 
@@ -368,7 +370,7 @@ def user_can_ban(func):
             and user not in [777000, 1087968824]
         ):
             update.effective_message.reply_text(
-                "Sorry son, but you're not worthy to wield the banhammer👉😏.",
+                "Sorry, but you're not worthy to wield the banhammer👉😏.",
             )
             return ""
         return func(update, context, *args, **kwargs)
