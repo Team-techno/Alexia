@@ -551,36 +551,6 @@ def kayo(update: Update, context: CallbackContext):
     site_search(update, context, "kayo")
 
 
-__help__ = """
- ──「 Anime search 」──  
-                         
-𒊹︎ /anime - `<anime> returns information about the anime.`
-
-𒊹︎ /whatanime - `returns source of anime when replied to photo or gif.`
-                                                          
-𒊹︎ /character - `<character> returns information about the character.`
-
- /manga - `<manga> returns information about the manga.`
-
-𒊹︎ /user - `<user> returns information about a MyAnimeList user.`
-
-𒊹︎ /upcoming - `returns a list of new anime in the upcoming seasons.`
-
-𒊹︎ /airing - `<anime> returns anime airing info.`
-
-𒊹︎ /whatanime - `<anime> reply to gif or photo.`
-
-𒊹︎ /kaizoku - `<anime> search an anime on animekaizoku.com`
-
-𒊹︎ /kayo - `<anime> search an anime on animekayo.com`
-
- 「 Anime Quotes 」
-
-𒊹︎ /animequotes - `for anime quotes randomly as photos.`
-
-𒊹︎ /quote - `send quotes randomly as text`
-
- """
 
 ANIME_HANDLER = DisableAbleCommandHandler("anime", anime, run_async=True)
 AIRING_HANDLER = DisableAbleCommandHandler("airing", airing, run_async=True)
