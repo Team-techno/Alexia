@@ -139,7 +139,7 @@ def sudo_plus(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Bhai,Bhen jo bhi ho apke pass ye right na ha sorry aur so sameless you are saste admin  🙂 dil se bura laga support @DeeCodeBots",
+                "You do not have rights to access this action",
             )
 
     return is_sudo_plus_func
@@ -202,7 +202,7 @@ def user_admin(func):
                 pass
         else:
             update.effective_message.reply_text(
-                "Bhai,Bhen jo bhi ho apke pass ye right na ha sorry aur so sameless you are saste admin  🙂 dil se bura laga support @DeeCodeBots",
+                "You do not have rights to access this action",
             )
 
     return is_admin
@@ -298,7 +298,7 @@ def can_pin(func):
 
         if update_chat_title == message_chat_title:
             cant_pin = (
-                "Ma pin na kar skta sed!\nMake sure Aur Admin bhi nahi diya 😔."
+                "I cannot pin this massage"
             )
         else:
             cant_pin = f"I can't pin messages in <b>{update_chat_title}</b>!\nMake sure I'm admin and can pin messages there."
@@ -319,9 +319,7 @@ def can_promote(func):
         message_chat_title = update.effective_message.chat.title
 
         if update_chat_title == message_chat_title:
-            cant_promote = "I can't promote/demote people here!
-
-Make sure I'm admin and can appoint new admins.."
+            cant_promote = "I can't promote/demote people here!\nMake sure I'm admin and can appoint new admins."
         else:
             cant_promote = (
                 f"I can't promote/demote people in <b>{update_chat_title}</b>!\n"
