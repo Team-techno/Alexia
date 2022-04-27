@@ -178,7 +178,7 @@ def whitelist_plus(func):
         if user and is_whitelist_plus(chat, user.id):
             return func(update, context, *args, **kwargs)
         update.effective_message.reply_text(
-            f"Tera pass ye sab dekhne ka access na ha sed.\nVisit @{SUPPORT_CHAT}",
+            f"You don't have access see this.\nVisit @{SUPPORT_CHAT}",
         )
 
     return is_whitelist_plus_func
