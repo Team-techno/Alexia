@@ -482,8 +482,8 @@ def yurikorobot_about_callback(update, context):
             f"\n\n✗ `2.) then promote me as admin and give all permissions except anonymous admin.`"
             f"\n\n✗ `3.) add` @Technomusicassistant `to your group:`"
             f"\n\n✗ `4.) turn on the video chat first before start to play music.`"
-            f"\n\n✗ *Lets Enjoy The Techno Music And Join Support Group @DeCodeSupport*"
-            f"\n\n*✗ 𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 [Techno](https://t.me/Technobotsupport)",
+            f"\n\n✗ *Lets Enjoy The Techno Music And Join Support Group @Technobotsupport*"
+            f"\n\n✗ 𝙋𝙊𝙒𝙀𝙍𝙀𝘿 𝘽𝙔 Techno",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
