@@ -138,7 +138,7 @@ def list_all_chats(update: Update, context: CallbackContext):
     update.effective_message.reply_text(text, parse_mode="HTML")
 
 __help__ = """
-𒊹︎ `Chatbot utilizes the` *Alexia* `api which allows Alexia to talk and provide a more interactive group chat experience.`
+𒊹︎ `Chatbot utilizes the` *Techno* `api which allows Techno to talk and provide a more interactive group chat experience.`
 
 *Admins only Commands*:
  
