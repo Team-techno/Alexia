@@ -33,12 +33,12 @@ def set_sticker(update: Update, context: CallbackContext):
     user = update.effective_user
 
     if user_can_changeinfo(chat, user, context.bot.id) is False:
-        return msg.reply_text("You have no right to change this noob Sharma ki bata ha")
+        return msg.reply_text("You're missing rights to change chat info!")
 
     if msg.reply_to_message:
         if not msg.reply_to_message.sticker:
             return msg.reply_text(
-                "You need to reply to some sticker to set chat sticker set!😏"
+                "You need to reply to some sticker to set chat sticker set!"
             )
         stkr = msg.reply_to_message.sticker.set_name
         try:
@@ -47,11 +47,11 @@ def set_sticker(update: Update, context: CallbackContext):
         except BadRequest as excp:
             if excp.message == "Participants_too_few":
                 return msg.reply_text(
-                    "Sorry, due to telegram restrictions chat needs to have minimum 100 members before they can have group stickers!💫"
+                    "Sorry, due to telegram restrictions chat needs to have minimum 100 members before they can have group stickers!"
                 )
             msg.reply_text(f"Error! {excp.message}.")
     else:
-        msg.reply_text("You need to reply to some sticker to set chat sticker set!😏")
+        msg.reply_text("You need to reply to some sticker to set chat sticker set!")
        
     
 @bot_admin
@@ -114,7 +114,7 @@ def set_desc(update: Update, context: CallbackContext):
     user = update.effective_user
 
     if user_can_changeinfo(chat, user, context.bot.id) is False:
-        return msg.reply_text("You're missing rights to change chat info!✋")
+        return msg.reply_text("You're missing rights to change chat info!")
 
     tesc = msg.text.split(None, 1)
     if len(tesc) >= 2:
@@ -138,12 +138,12 @@ def setchat_title(update: Update, context: CallbackContext):
     args = context.args
 
     if user_can_changeinfo(chat, user, context.bot.id) is False:
-        msg.reply_text("You don't have enough rights to change chat info so sameless saste admin 😏💰!")
+        msg.reply_text("You don't have enough rights to change chat info!")
         return
 
     title = " ".join(args)
     if not title:
-        msg.reply_text("Give me some text then I am set chat tittle")
+        msg.reply_text("Enter some text to set new title in your chat!")
         return
 
     try:
@@ -176,7 +176,7 @@ def promote(update: Update, context: CallbackContext) -> str:
         not (promoter.can_promote_members or promoter.status == "creator")
         and user.id not in DRAGONS
     ):
-        message.reply_text("You don't have the necessary rights to do that")
+        message.reply_text("You don't have the necessary rights to do that!")
         return
 
     user_id = extract_user(message, args)
@@ -258,14 +258,14 @@ def lowpromote(update: Update, context: CallbackContext) -> str:
         not (promoter.can_promote_members or promoter.status == "creator")
         and user.id not in DRAGONS
     ):
-        message.reply_text("You don't have the necessary rights to do that")
+        message.reply_text("You don't have the necessary rights to do that!")
         return
 
     user_id = extract_user(message, args)
 
     if not user_id:
         message.reply_text(
-            "You don't seem to be referring to a user or the ID specified is incorrect.",
+            "You don't seem to be referring to a user or the ID specified is incorrect..",
         )
         return
 
@@ -335,7 +335,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
         not (promoter.can_promote_members or promoter.status == "creator")
         and user.id not in DRAGONS
     ):
-        message.reply_text("You don't have the necessary rights to do that")
+        message.reply_text("You don't have the necessary rights to do that!")
         return
 
     user_id = extract_user(message, args)
@@ -378,7 +378,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
         )
     except BadRequest as err:
         if err.message == "User_not_mutual_contact":
-            message.reply_text("I can't promote someone who isn't in the group")
+            message.reply_text("I can't promote someone who isn't in the group.")
         else:
             message.reply_text("An error occured while promoting.")
         return
@@ -434,11 +434,11 @@ def demote(update: Update, context: CallbackContext) -> str:
         return
 
     if not user_member.status == "administrator":
-        message.reply_text("Can't demote what wasn't promoted!🎉")
+        message.reply_text("Can't demote what wasn't promoted!")
         return
 
     if user_id == bot.id:
-        message.reply_text("Agar merko demote kiya to dekha lena 😏 aur me apne apko demote na kar skta sed🥺")
+        message.reply_text("I can't demote myself! Get an admin to do it for me.")
         return
 
     try:
@@ -600,7 +600,7 @@ def pin(update: Update, context: CallbackContext) -> str:
                     [
                         [
                             InlineKeyboardButton(
-                                "🥰 Go to message", url=f"{message_link}")
+                                "👉 Go to message", url=f"{message_link}")
                         ]
                     ]
                 ), 
@@ -713,7 +713,7 @@ def pinned(update: Update, context: CallbackContext) -> str:
             parse_mode=ParseMode.HTML,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="🥰 Go to message", url=f"https://t.me/{link_chat_id}/{pinned_id}")]]
+                [[InlineKeyboardButton(text="👉 Go to message", url=f"https://t.me/{link_chat_id}/{pinned_id}")]]
             ),
         )
 
@@ -921,51 +921,30 @@ def button(update: Update, context: CallbackContext) -> str:
   
 __help__ = """
 *User Commands*:
-
-𒊹︎ /admins - `list of admins in the chat`
-
-𒊹︎ /pinned - `to get the current pinned message.`
+❂ /admins*:* list of admins in the chat
+❂ /pinned*:* to get the current pinned message.
 
 *The Following Commands are Admins only:* 
-
-𒊹︎ /pin - `silently pins the message replied to - add 'loud' or 'notify' to give notifs to users`
-
-𒊹︎ /unpin - `unpins the currently pinned message`
-
-𒊹︎ /invitelink - `gets invitelink`
-
-𒊹︎ /promote - `promotes the user replied to`
-
-𒊹︎ /fullpromote - `promotes the user replied to with full rights`
-
-𒊹︎ /demote - `demotes the user replied to`
-
-𒊹︎ /title - `<title here> sets a custom title for an admin that the bot promoted`
-
-𒊹︎ /admincache - `force refresh the admins list`
-
-𒊹︎ /del - `deletes the message you replied to`
-
-𒊹︎ /purge - `deletes all messages between this and the replied to message.`
-
-𒊹︎ /purge - `<integer X> deletes the replied message, and X messages following it if replied to a message.`
-
-𒊹︎ /setgtitle - `<text> set group title`
-
-𒊹︎ /setgpic - `reply to an image to set as group photo`
-
-𒊹︎ /setdesc - `Set group description`
-
-𒊹 /setsticker - `Set group sticker`
+❂ /pin*:* silently pins the message replied to - add `'loud'` or `'notify'` to give notifs to users
+❂ /unpin*:* unpins the currently pinned message
+❂ /invitelink*:* gets invitelink
+❂ /promote*:* promotes the user replied to
+❂ /fullpromote*:* promotes the user replied to with full rights
+❂ /demote*:* demotes the user replied to
+❂ /title <title here>*:* sets a custom title for an admin that the bot promoted
+❂ /admincache*:* force refresh the admins list
+❂ /del*:* deletes the message you replied to
+❂ /purge*:* deletes all messages between this and the replied to message.
+❂ /purge <integer X>*:* deletes the replied message, and X messages following it if replied to a message.
+❂ /setgtitle <text>*:* set group title
+❂ /setgpic*:* reply to an image to set as group photo
+❂ /setdesc*:* Set group description
+❂ /setsticker*:* Set group sticker
 
 *Rules*:
-
-𒊹︎ /rules - `get the rules for this chat.`
-
-𒊹︎ /setrules - `<your rules here>  set the rules for this chat.`
-
-𒊹︎ /clearrules - `clear the rules for this chat.`
-
+❂ /rules*:* get the rules for this chat.
+❂ /setrules <your rules here>*:* set the rules for this chat.
+❂ /clearrules*:* clear the rules for this chat.
 """
 
 SET_DESC_HANDLER = CommandHandler("setdesc", set_desc, filters=Filters.chat_type.groups, run_async=True)
