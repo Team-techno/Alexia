@@ -69,7 +69,7 @@
       },
       "BOT_USERNAME": {
          "description": "username of your bot without the @",
-         "value": "Techno_ro_bot"
+         "value": "Techno_x_robot"
       },
 
       "BOT_ID": {
@@ -79,7 +79,7 @@
 
       "OWNER_USERNAME": {
          "description": "Your username without the @",
-         "value": "Technomusicassistant"
+         "value": "Saury12p"
       },
       "SUPPORT_CHAT": {
          "description": "Your Telegram support group chat username where your users will go and bother you with shit But be like: MyGroupChatUsernameBlah. If this ever points to masha support than consider you made an enemy.",
