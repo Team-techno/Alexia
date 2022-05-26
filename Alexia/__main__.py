@@ -131,8 +131,8 @@ Click on the button bellow to get description about specifics command."""
 
 HELP_MSG = "Click the button below to get help menu in your pm."
 DONATE_STRING = """Contact to **@Saury12p**"""
-HELP_IMG = "https://telegra.ph/file/7aec86991b304089e3ec1.jpg"
-GROUP_IMG = "https://telegra.ph/file/73337f3406d18b80a2683.jpg"
+HELP_IMG = "https://telegra.ph/file/adf3c309106b89cd073e7.jpg"
+GROUP_IMG = "https://telegra.ph/file/adf3c309106b89cd073e7.jpg"
 
 
 
@@ -249,7 +249,7 @@ def start(update: Update, context: CallbackContext):
     else:
         first_name = update.effective_user.first_name
         update.effective_message.reply_photo(
-             GROUP_IMG, caption= "*Hey {},*\n*Lyra Robot is here*\n*Power level time* : {} ".format(
+             GROUP_IMG, caption= "*Hey {},*\n*Techno Robot is here*\n*Power level time* : {} ".format(
              first_name,uptime
             ),
             parse_mode=ParseMode.MARKDOWN,
@@ -390,15 +390,15 @@ def misslyra_about_callback(update, context):
     query = update.callback_query
     if query.data == "misslyra_":
         query.message.edit_text(
-            text="๏ I'm *Lyra Robot*, a powerful group management bot built to help you manage your group easily."
+            text="๏ I'm *Techno Robot*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
             "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
             "\n• I check for admins' permissions before executing any command and more stuffs"
-            "\n\n_Lyra licensed under the GNU General Public License v3.0_"
-            "\n\n Click on button bellow to get basic help for Anie.",
+            "\n\n_Techno licensed under the GNU General Public License v3.0_"
+            "\n\n Click on button bellow to get basic help for Techno.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -465,8 +465,8 @@ def misslyra_about_callback(update, context):
         )
     elif query.data == "misslyra_support":
         query.message.edit_text(
-            text="*๏ Lyra support chats*"
-            "\nJoin My Support Group/Channel for see or report a problem on Lyra.",
+            text="*๏ Techno support chats*"
+            "\nJoin My Support Group/Channel for see or report a problem on Techno.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
