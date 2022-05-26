@@ -127,13 +127,6 @@ async def ytmusic(client, message: Message):
         with YoutubeDL(opts) as ytdl:
             infoo = ytdl.extract_info(url, False)
             duration = round(infoo["duration"] / 60)
-
-            if duration > 180:
-                await pablo.edit(
-                    f"❌ **durasinya kelamaan gabisa tot:v**"
-                )
-                is_downloading = False
-                return
             ytdl_data = ytdl.extract_info(url, download=True)
 
     except Exception as e:
