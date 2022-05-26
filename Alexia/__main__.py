@@ -6,12 +6,12 @@ import time
 import re
 import sys
 import traceback
-import MissLyraRobot.modules.sql.users_sql as sql
+import Alexia.modules.sql.users_sql as sql
 from sys import argv
 from typing import Optional
 from telegram import __version__ as peler
 from platform import python_version as memek
-from MissLyraRobot import (
+from Alexia import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -147,7 +147,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module(Alexia..modules." + module_name)
+    imported_module = importlib.import_module("Alexia..modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -471,8 +471,8 @@ def misslyra_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Support", url="https://t.me/XCodeSupport"),
-                    InlineKeyboardButton(text="Updates", url="https://t.me/TheXCodeTeam"),
+                    InlineKeyboardButton(text="Support", url="https://t.me/Technobotsupport"),
+                    InlineKeyboardButton(text="Updates", url="https://t.me/technobotupdate"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="misslyra_"),
@@ -485,13 +485,13 @@ def misslyra_about_callback(update, context):
 
     elif query.data == "misslyra_credit":
         query.message.edit_text(
-            text=f"๏ Credis for Lyra Robot\n"
-            "\nHere Developers Making And Give Inspiration For Made Miss Lyra",
+            text=f"๏ Credis for Techno Robot\n"
+            "\nHere Developers Making And Give Inspiration For Made TechnoRobot",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="<𝗡𝗶𝘁𝗿𝗶𝗰'𝗫𝗱/>", url="https://t.me/Xed_NitriC"), 
+                    InlineKeyboardButton(text="Saurabh", url="https://t.me/Saury12p"), 
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="misslyra_"),
@@ -501,12 +501,12 @@ def misslyra_about_callback(update, context):
         )
     elif query.data == "misslyra_donate":
         query.message.edit_text(
-            text=f"๏ Donate for Miss Lyra",
+            text=f"๏ Donate for TechnoRobot",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Free", url="tg://need_update_for_some_feature"),
+                    InlineKeyboardButton(text="Assistant", url="https://t.me/Technomusicassistant"),
                  ],
                  [
                     InlineKeyboardButton(text="Go Back", callback_data="misslyra_back"),
