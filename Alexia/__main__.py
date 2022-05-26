@@ -81,7 +81,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-────「 [Techno Robot](https://telegra.ph/file/73337f3406d18b80a2683.jpg) 」────
+────「 [Techno Robot](https://telegra.ph/file/7aec86991b304089e3ec1.jpg) 」────
 ʜᴇʏ! {}
 ɪ ᴀᴍ *Techno Robot* ᴀɴ ᴀɴɪᴍᴇ ᴛʜᴇᴍᴇᴅ ᴀᴅᴠᴀɴᴄᴇ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ ᴀ ʟᴏᴛ ᴏғ sᴘᴇᴄɪᴀʟɪᴛʏ.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
@@ -131,7 +131,7 @@ Click on the button bellow to get description about specifics command."""
 
 HELP_MSG = "Click the button below to get help menu in your pm."
 DONATE_STRING = """Contact to **@Saury12p**"""
-HELP_IMG = "https://telegra.ph/file/73337f3406d18b80a2683.jpg"
+HELP_IMG = "https://telegra.ph/file/7aec86991b304089e3ec1.jpg"
 GROUP_IMG = "https://telegra.ph/file/73337f3406d18b80a2683.jpg"
 
 
