@@ -19,13 +19,13 @@ async def purge_messages(event):
             user_id=event.sender_id,
             message=event,
         )
-        and event.from_id not in [1087968824]
+        and event.from_id not in [1151132400]
     ):
         await event.reply("Only Admins are allowed to use this command")
         return
 
     if not await can_delete_messages(message=event):
-        await event.reply("I cannot see")
+        await event.reply("Can't seem to purge the message")
         return
 
     reply_msg = await event.get_reply_message()
@@ -60,7 +60,7 @@ async def delete_messages(event):
             user_id=event.sender_id,
             message=event,
         )
-        and event.from_id not in [1087968824]
+        and event.from_id not in [1151132400]
     ):
         await event.reply("Only Admins are allowed to use this command")
         return
